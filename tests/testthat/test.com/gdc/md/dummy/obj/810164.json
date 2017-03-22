@@ -1,0 +1,35 @@
+{
+   "report" : {
+      "content" : {
+         "domains" : [
+            "/gdc/md/dummy/obj/810116"
+         ],
+         "definitions" : [
+            "/gdc/md/dummy/obj/810163",
+            "/gdc/md/dummy/obj/810167",
+            "/gdc/md/dummy/obj/810173",
+            "/gdc/md/dummy/obj/810168",
+            "/gdc/md/dummy/obj/811150",
+            "/gdc/md/dummy/obj/818632",
+            "/gdc/md/dummy/obj/842732",
+            "/gdc/md/dummy/obj/960153",
+            "/gdc/md/dummy/obj/1090631"
+         ]
+      },
+      "meta" : {
+         "locked" : 1,
+         "author" : "/gdc/account/profile/dummy",
+         "uri" : "/gdc/md/dummy/obj/810164",
+         "tags" : "popular",
+         "created" : "2010-12-20 14:17:52",
+         "identifier" : "xxxxxxxxx",
+         "deprecated" : "0",
+         "summary" : "",
+         "isProduction" : 1,
+         "title" : "My Report",
+         "category" : "report",
+         "updated" : "2010-11-22 17:16:53",
+         "contributor" : "/gdc/account/profile/xxxxxxxxxxxf"
+      }
+   }
+}

@@ -26,11 +26,13 @@ getReportRawUri <- function(obj) {
   api.url <- paste0(Sys.getenv("GOODDATA_DOMAIN"), "/gdc/app/projects/",
                     Sys.getenv("GOODDATA_PROJECT"), "/execute/raw")
 
+
   response <- POST(url = api.url,
                    body = values,
                    content_type_json() ,
                    add_headers(Accept = "application/json",
                                "Content-Type" = "application/json",
+                               "User-Agent" = getUserAgent(),
                                Cookie = authCookie()))
 
   c <- processResponse(response)
@@ -49,6 +51,7 @@ getReportData <- function(uri, wait = 5) {
   response <- GET(uri,
                   authenticate(Sys.getenv("GOODDATA_USER"), Sys.getenv("GOODDATA_PASSWORD")),
                   add_headers(Accept = "application/json",
+                              "User-Agent" = getUserAgent(),
                               "Content-Type" = "application/json"))
   status <- status_code(response)
   if(status >= 200 & status < 300) {
@@ -76,6 +79,7 @@ getLastDefinition <- function(report.obj) {
   response <- GET(url = paste0(Sys.getenv("GOODDATA_DOMAIN"), "/gdc/md/", Sys.getenv("GOODDATA_PROJECT"), "/obj/", report.obj),
                   add_headers(Accept = "application/json",
                               "Content-Type" = "application/json",
+                              "User-Agent" = getUserAgent(),
                               Cookie = authCookie()))
 
   c <- processResponse(response)

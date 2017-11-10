@@ -20,6 +20,7 @@ superSecuredToken <- function() {
   response = POST(url = paste0(Sys.getenv("GOODDATA_DOMAIN"), "/gdc/account/login/"),
            body = values,
            add_headers("Content-Type" = "application/json",
+                       "User-Agent" = getUserAgent(),
                         Accept = "application/json"),
            encode = "json")
 
@@ -39,6 +40,7 @@ temporaryToken <- function(sst) {
                  add_headers(
                    'Accept' = 'application/json',
                    'Content-Type' = 'application/json',
+                   'User-Agent' = getUserAgent(),
                    'Cookie' =  sst)
               )
 

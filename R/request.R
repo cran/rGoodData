@@ -29,3 +29,10 @@ processResponseError <- function(response) {
     stop("HTTP error [", status_code(response), "] ", out, call. = FALSE)
   }
 }
+
+#' Helper function that gets user agent header
+getUserAgent <- function() {
+  user.agent <- Sys.getenv("GOODDATA_USER_AGENT",
+                           unset = paste0("rGoodData" , " / ", packageVersion("rGoodData")))
+  return(user.agent)
+}

@@ -18,8 +18,8 @@ with_mock(
     })
 
     test_that("Correct report URI is returned", {
-      # res <- getReportRawUri(111111L)
-      # expect_identical(res, "test.com/test/uri")
+      res <- getReportRawUri(111111L)
+      expect_identical(res, "test.com/test/uri")
     })
 
   })
@@ -35,7 +35,7 @@ test_that("Error code is processed correctly",
     authCookie = mock("", cycle = T),
     with_mock_API({
       expect_error(res <- getLastDefinition(810164L), regex = "401")
-      # expect_error(res <- getReportRawUri(810164L), regex = "401")
+      expect_error(res <- getReportRawUri(810164L), regex = "401")
       expect_error(res <- getReportData("test.com/dummy"), regex = "401")
     })
   )
